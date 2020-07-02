@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Inventory from "./components/inventory";
 import Cart from "./components/cart";
@@ -9,15 +10,21 @@ import "./style.css";
 
 function App() {
   return (
-    <CartProvider>
-      <MyNavbar />
-      <div className="app m-5">
-        {/* <Carousel /> */}
-        <Cart />
-        <Inventory />
-        <Inventory />
+    <Router>
+      <div>
+        <Switch>
+          <CartProvider>
+            <MyNavbar />
+            <div className="app m-5">
+              {/* <Carousel /> */}
+              <Cart />
+              <Inventory />
+              <Inventory />
+            </div>
+          </CartProvider>
+        </Switch>
       </div>
-    </CartProvider>
+    </Router>
   );
 }
 
