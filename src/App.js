@@ -1,12 +1,17 @@
 import React from "react";
 import Inventory from "./components/inventory";
-import "./App.css";
+import Cart from "./components/cart";
+import "./style.css";
+import { CartProvider } from "./components/cartContext";
 
 function App() {
   return (
-    <div className="App">
-      <Inventory />
-    </div>
+    <CartProvider>
+      <div className="app">
+        <Cart />
+        <Inventory />
+      </div>
+    </CartProvider>
   );
 }
 
