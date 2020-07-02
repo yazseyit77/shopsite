@@ -5,7 +5,7 @@ const Stock = (props) => {
   const [cart, setCart] = useContext(CartContext);
   const addToCart = () => {
     const product = { name: props.name, price: props.price };
-    setCart((current) => [...current, product]);
+    setCart((currentState) => [...currentState, product]);
   };
 
   return (

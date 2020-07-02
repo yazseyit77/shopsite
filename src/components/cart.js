@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CartContext } from "./cartContext";
 
 const Cart = (props) => {
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   const totalPrice = cart.reduce((a, b) => b.price + a, 0);
   return (
     <div>
@@ -10,6 +10,12 @@ const Cart = (props) => {
       <br />
       <h4>Total: {totalPrice}</h4>
       <br />
+      <hr />
+      {cart.map((item) => (
+        <h6>
+          {item.name} - {item.price}
+        </h6>
+      ))}
       <hr />
     </div>
   );
