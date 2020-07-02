@@ -4,7 +4,8 @@ import { CartContext } from "./cartContext";
 const Stock = (props) => {
   const [cart, setCart] = useContext(CartContext);
   const addToCart = () => {
-    console.log("clicked");
+    const product = { name: props.name, price: props.price };
+    setCart((current) => [...current, product]);
   };
 
   return (
